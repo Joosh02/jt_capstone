@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-sqlalchemy = "*"
+flask-marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+mysqlclient = "*"
+mysql = "*"
+mysql-connector-python = "*"
+flask-wtf = "*"
+pymysql = "*"
+cryptography = "*"
+flask-migrate = "*"
+flask-login = "*"
+flask-ckeditor = "*"
+gunicorn = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"

@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% block content %} {% for message in
+    get_flashed_messages() %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{ message }}</strong>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %}
+    <h2>Dashboard!</h2>
+    <br />
+
+    <div class="card">
+        <div class="card-header">
+            {{ current_user.name }}
+        </div>
+        <div class="card-body">
+        
+          <p class="card-text">  
+            <div class="container">
+              <div class="row">
+                <div class="col-8">
+              
+            <strong>Name:</strong> {{ current_user.name }}<br />
+            <strong>Username:</strong> {{ current_user.username }}<br />
+            <strong>UserId:</strong> {{ current_user.id }}<br />
+            <strong>Email:</strong> {{ current_user.email }}<br />
+            <strong>Date Joined:</strong> {{ current_user.date_added }}<br /></p>
+          <a href="{{ url_for('logout') }}" class="btn btn-secondary btn-sm">Logout</a>
+          <a href="{{ url_for('update', id=current_user.id) }}" class="btn btn-secondary btn-sm">Update Profile</a>
+          <a href="{{ url_for('delete', id=current_user.id) }}" class="btn btn-danger btn-sm">Delete</a>
+
+         
+          </div>
+          <div class="col-4">
+            {% if current_user.profile_picture %}
+            <img src="{{ url_for('static', filename='images/' + current_user.profile_picture) }}" alt="Profile Picture" width="150" align="right">
+
+            {% else %}
+            <img src="../static/images/defaultProfile.png" alt="Profile Picture" width="150" align="right">
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+      <div class="card">
+        <div class="card-header">
+          Update Profile
+        </div>
+        <div class="card-body">
+          <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+            <form action="/dashboard" method="POST" enctype="multipart/form-data">
+              {{ form.hidden_tag() }} {{ form.name.label( class="form-label") }} {{
+              form.name(class="form-control", value=name_to_update.name) }}
+              <br />
+          
+              {{ form.username.label( class="form-label") }} {{
+              form.username(class="form-control", value=name_to_update.username) }}
+              <br />
+          
+              {{ form.email.label( class="form-label") }} {{
+              form.email(class="form-control", value=name_to_update.email) }}
+              <br />
+
+              {{ form.profile_picture.label( class="form-label") }} {{
+                form.profile_picture(class="form-control", value=name_to_update.profile_picture) }}
+                <br />
+          
+              {{ form.submit(class="btn btn-secondary") }}
+          
+            </form>
+          </div>
+        </div>
+      </div>
+   
+ 
+   
+
+     
+    </div>
+    
+    {% endblock %}
+    

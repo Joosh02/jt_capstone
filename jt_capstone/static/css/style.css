@@ -1,0 +1,41 @@
+h1 {
+  color: darkblue;
+  font-size: 60px;
+}
+
+body {
+  font-family: "Sono", sans-serif;
+  background: #f4f4f4;
+}
+
+#demo {
+  font-size: 12px;
+  color: darkblue;
+}
+
+/* Nav styles */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  opacity: 0;
+  transition: all 0.2s;
+  height: 2px;
+  width: 100%;
+  background-color: rgb(8, 9, 6);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+}
+
+/* Banner Image */
+
+.banner_img {
+  width: 100%;
+}
