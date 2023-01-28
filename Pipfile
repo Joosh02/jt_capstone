@@ -18,6 +18,7 @@ flask-migrate = "*"
 flask-login = "*"
 flask-ckeditor = "*"
 gunicorn = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
