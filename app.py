@@ -14,7 +14,7 @@ import os
 app = Flask(__name__)
 ckeditor = CKEditor(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://azaoydqyrtodxb:e6caacb1f2bd4fbfdb17d5b06b326c30c48fb3cc76150f2859985cb1310c6f6f@ec2-52-3-60-53.compute-1.amazonaws.com:5432/d32gvgjkaefqhp'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://azaoydqyrtodxb:e6caacb1f2bd4fbfdb17d5b06b326c30c48fb3cc76150f2859985cb1310c6f6f@ec2-52-3-60-53.compute-1.amazonaws.com:5432/d32gvgjkaefqhp'
 app.config['SECRET_KEY'] = "secret key"
 
 UPLOAD_TO_STATIC = 'static/images/'
